@@ -22,8 +22,9 @@ import toast from 'react-hot-toast'
 
             try {
                 const { data } = await api.post(`/api/users/${state}`, formData)
-                dispatch(login(data))
                 localStorage.setItem('token',data.token)
+                dispatch(login(data))
+                // localStorage.setItem('token',data.token)
                 toast.success(data.message)
             }
             catch (error) {

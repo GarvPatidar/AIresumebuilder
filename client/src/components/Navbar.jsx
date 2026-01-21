@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { logout } from '../app/features/authSlice'
 const Navbar = () => {
-    const {user}=useSelector(state.auth)
+    // const {user}=useSelector(state.auth)
+    const { user } = useSelector((state) => state.auth)
+
    const dispatch=useDispatch();
    const navigate=useNavigate()
     const logoutuser=()=>{

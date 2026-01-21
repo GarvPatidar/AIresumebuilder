@@ -1,24 +1,53 @@
-import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
-import Navbar from '../Components/Navbar'
-import {useSelector } from 'react-redux'
-import Loader from '../components/Loader'
-import Login from './Login'
-const Layout = () => {
-  const {user,loading}=useSelector(state=>state.auth)
+// import React from 'react'
+// import { NavLink, Outlet } from 'react-router-dom'
+// import Navbar from '../Components/Navbar'
+// import {useSelector } from 'react-redux'
+// import Loader from '../components/Loader'
+// import Login from './Login'
+// const Layout = () => {
+//   const {user,loading}=useSelector(state=>state.auth)
 
-  if(loading){
-    return <Loader/>
-  }
-  return (
-    <div>
-      {
-        user?(<div className='min-h-screen bg-gray-50'>
-        <Navbar/>
-        <Outlet/>
-      </div>):<Login/>
-      }
+//   if(loading){
+//     return <Loader/>
+//   }
+//   return (
+//     <div>
+//       {
+//         user?(<div className='min-h-screen bg-gray-50'>
+//         <Navbar/>
+//         <Outlet/>
+//       </div>):<Login/>
+//       }
      
+//     </div>
+//   )
+// }
+
+// export default Layout
+
+
+import React from 'react'
+import { Outlet, Navigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar'
+import { useSelector } from 'react-redux'
+import Loader from '../components/Loader'
+
+const Layout = () => {
+  const { user, loading } = useSelector((state) => state.auth)
+
+  if (loading) {
+    return <Loader />
+  }
+
+  // 🔐 Protect routes
+  if (!user) {
+    return <Navigate to="/" replace />
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <Outlet />
     </div>
   )
 }

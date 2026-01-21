@@ -148,7 +148,9 @@ import Projectform from '../components/Projectform'
 import Skillsform from '../components/Skillsform'
 import { useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
-import { updateResume } from '../../../server/controllers/resumecontroller'
+import api from '../utils/api'
+
+// import { updateResume } from '../../../server/controllers/resumecontroller'
 const Resumebuilder = () => {
   const { resumeId } = useParams()
   const {token}=useSelector(state=>state.auth)
