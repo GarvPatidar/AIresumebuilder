@@ -154,19 +154,7 @@ Resume Analytics (View Count)
 
 Payment Integration for Premium Templates
 
-🎯 Learning Outcomes
 
-Full-stack MERN development
-
-AI API integration
-
-Prompt engineering basics
-
-JWT authentication & authorization
-
-PDF generation
-
-Scalable folder structure design
 
 🧑‍💻 Author
 
