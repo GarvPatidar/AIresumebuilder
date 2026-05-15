@@ -17,15 +17,14 @@ import protect from "../middleware/authmiddleware.js";
 
 import {
   enhanceJobdesscription,
-  enhanceProfessionalSummary
+  enhanceProfessionalSummary,
+  uploadresume
 } from "../controllers/aicontroller.js";
-
-import { updateResume } from "../controllers/resumecontroller.js";
 
 const aiRouter = express.Router();
 
 aiRouter.post("/enhance-pro-sum", protect, enhanceProfessionalSummary);
 aiRouter.post("/enhance-job-des", protect, enhanceJobdesscription);
-aiRouter.post("/upload-resume", protect, updateResume);
+aiRouter.post("/upload-resume", protect, uploadresume);
 
 export default aiRouter;

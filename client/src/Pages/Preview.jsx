@@ -42,14 +42,15 @@ import { useParams, Link } from "react-router-dom";
 import { dummyResumeData } from "../assets/assets";
 import Loader from "../components/Loader";
 import { ArrowLeftIcon } from "lucide-react";
+import api from "../utils/api";
 
 const Preview = () => {
-  const { resumeid } = useParams();
+  const { resumeId } = useParams();
   const [resumeData, setResumeData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 const loadResume=async ()=>{
   try{
-const {data}=await api.get('/api/resumes/public/'+resumeid)
+const {data}=await api.get('/api/resumes/public/'+resumeId)
 setResumeData(data.resume)
   }
   catch(error){
@@ -61,12 +62,12 @@ console.log(error.message);
 }
   useEffect(() => {
     const data = dummyResumeData.find(
-      resume => resume._id === resumeid
+      resume => resume._id === resumeId
     );
 
     setResumeData(data || null);
     setIsLoading(false);
-  }, [resumeid]);
+  }, [resumeId]);
 
   // 🔹 LOADING
   if (isLoading) return <Loader />;

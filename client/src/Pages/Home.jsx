@@ -1,10 +1,10 @@
 import React from 'react'
-import Banner from '../Components/home/Banner'
-import Hero from '../Components/home/hero'
-import Features from '../Components/home/features'
-import Testimonials from '../Components/home/Testimonials'
-import CalltoAction from '../Components/home/CalltoAction'
-import Footer from '../Components/home/footer'
+import Banner from '../components/home/Banner'
+import Hero from '../components/home/Hero'
+import Features from '../components/home/features'
+import Testimonials from '../components/home/Testimonials'
+import CalltoAction from '../components/home/CalltoAction'
+import Footer from '../components/home/Footer'
 const Home = () => {
   return (
     <div>

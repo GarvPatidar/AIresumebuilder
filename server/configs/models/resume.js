@@ -6,7 +6,7 @@ const resumeschema=new mongoose.Schema({
         ref:"user",
         
     },
-    tittle:{
+    title:{
         type:String,
         default:'Untitled Resume'
     },

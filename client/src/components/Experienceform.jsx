@@ -127,8 +127,8 @@ setGeneratingIndex(index)
 const experience=data[index]
 const prompt=`enhance this job description ${experience.description} for the position of ${experience.position} at ${experience.company}.`
 try{
-const {data}=await api.post('api/ai/enhance-job-desc',{userContent:prompt},{headers:{Authorization:token}})
-updateExperience(index,"description",data.enhancedContent)
+const {data}=await api.post('/api/ai/enhance-job-des',{userContent:prompt})
+updateExperience(index,"description",data.enhancedcontent)
 
 }
 catch(error){

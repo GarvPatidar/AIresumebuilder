@@ -69,13 +69,12 @@ const Professionalsummary = ({ data, onChange, setResumeData }) => {
       const prompt = `Enhance my professional summary: "${data}"`
       const response = await api.post(
         '/api/ai/enhance-pro-sum',
-        { userContent: prompt },
-        { headers: { Authorization: token } }
+        { userContent: prompt }
       )
 
       setResumeData(prev => ({
         ...prev,
-        professionalSummary: response.data.enhancedContent
+        professional_summary: response.data.enhancedcontent
       }))
     }
     catch (error) {

@@ -14,10 +14,10 @@ const authSLice=createSlice({
 
 
         },
-        logout:()=>{
-            state.token='',
-            state.user=null,
-            localStorage.removeItem('token')
+        logout:(state)=>{
+            state.token='';
+            state.user=null;
+            localStorage.removeItem('token');
         },
         setLoading:(state,action)=>{
             state.loading=action.payload
